@@ -1,5 +1,5 @@
-// import database from "../config/seq.config.js";
-// import { Model, DataTypes } from "sequelize";
+import sequelize from "../config/seq.config.js";
+import { Model, DataTypes } from "sequelize";
 
 class Song extends Model {}
 
@@ -26,9 +26,11 @@ Song.init(
 		},
 	},
 	{
-		database,
+		sequelize,
 		modelName: "song",
-		// Indstillinger
+		underscored: true, // Brug underscores istedet for standarden CamelCase
+		freezeTableName: true, // Brug denne hvis du vil undgå table names i flertal tabellen
+		timestamps: false, // Undgå både createdAt og updatedAt felter
 	}
 );
 

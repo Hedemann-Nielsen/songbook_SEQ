@@ -1,16 +1,12 @@
 import express from "express";
 import sequelize from "../config/seq.config.js";
+import SongController from "../controllers/song.controller.js";
 const router = express.Router();
+const controller = new SongController();
 
-router.get("/", (req, res) => {
-	(async () => {
-		try {
-			await sequelize.authenticate();
-			console.log("Der er forbindelse til databasen");
-		} catch (error) {
-			console.error(`Fejl! Kunne ikke forbinde til databasen: ${error}`);
-		}
-	})();
+router.get("/songs", (req, res) => {});
+
+router.post("/songs", (req, res) => {
+	controller.create(req, res);
 });
-
 export { router as MainRouter };

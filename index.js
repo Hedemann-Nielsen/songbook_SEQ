@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000;
 // Udvider app i index.js så vi kan læse form body data
 app.use(express.urlencoded({ extended: true }));
 
-app.use(MainRouter);
+app.use(MainRouter, InstallRouter);
 
 app.listen(port, () => {
 	console.log(`server køre med port http://localhost:${port}`);

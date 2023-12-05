@@ -1,15 +1,30 @@
-import SongModel from "../models/song.model.js";
+import Song from "../models/song.models.js";
 
-const model = new SongModel();
+export default class SongController {
+	constructor() {
+		console.log("SongController instantiated");
+	}
+	create = async (req, res) => {
+		console.log(req.body);
 
-// Controller
-class SongController {
-	constructor() {}
+		const { title, context, is_active } = req.body; //destructuring
 
-	// list = async (req, res) => {
-	// 	const result = await model.list(req, res);
-	// 	res.json(result);
-	// };
+		if (title && context && is_active) {
+			const restult = await Song.create(req.body);
+			res.status(200).send({
+				messeage: "Record created successfully",
+				newid: restult.id,
+			});
+		} else {
+			res.status(403).send({
+				messeage: "wrong parameter values",
+			});
+		}
+		// const song = new Song({title, content, is_active});
+		// try {
+		// 	await song.save();
+		// 	res.status(201).json({
+
+		// console.log("create metode");
+	};
 }
-
-export default SongController;
