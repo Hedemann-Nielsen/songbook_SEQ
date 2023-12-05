@@ -1,6 +1,6 @@
 import express from "express";
 import database from "../config/seq.config.js";
-import Song from "../models/song.models.js";
+import Song from "../models/song.model.js";
 
 const router = express.Router();
 

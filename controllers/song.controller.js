@@ -1,4 +1,4 @@
-import SongModel from "../models/song.models.js";
+import SongModel from "../models/song.model.js";
 
 const model = new SongModel();
 

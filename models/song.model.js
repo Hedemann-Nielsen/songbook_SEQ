@@ -1,11 +1,10 @@
 import database from "../config/seq.config.js";
 import { Model, DataTypes } from "sequelize";
 
-class Song extends Model {}
+class song extends Model {}
 
-Song.init(
+song.init(
 	{
-		// Objekt med felter
 		id: {
 			type: DataTypes.INTEGER,
 			autoIncrement: true,
@@ -16,20 +15,19 @@ Song.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		context: {
-			type: DataTypes.TEXT,
+		content: {
+			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		is_active: {
-			type: DataTypes.BOOLEAN,
+		artist_id: {
+			type: DataTypes.STRING,
 			allowNull: false,
 		},
 	},
 	{
 		database,
 		modelName: "song",
-		// Indstillinger
 	}
 );
 
-export default Song;
+export default song;
