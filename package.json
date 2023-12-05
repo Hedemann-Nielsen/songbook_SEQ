@@ -1,0 +1,25 @@
+{
+  "name": "songbook_seq",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000s\u0000o\u0000n\u0000g\u0000b\u0000o\u0000o\u0000k\u0000_\u0000S\u0000E\u0000Q\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hedemann-Nielsen/songbook_SEQ.git"
+  },
+  "author": "Tanja Hedemann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hedemann-Nielsen/songbook_SEQ/issues"
+  },
+  "homepage": "https://github.com/Hedemann-Nielsen/songbook_SEQ#readme",
+  
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
