@@ -1,13 +1,8 @@
 import express from "express";
-import SongController from "../controllers/song.controller.js";
-
 const router = express.Router();
 
-// Kalder instans af klassen SongController
-const controller = new SongController();
+router.get("/", (req, res) => {
+	console.log(1234);
+});
 
-// router.get("/api/song", (req, res) => {
-// 	controller.list(req, res);
-// });
-
-export { router };
+export { router as MainRouter };
