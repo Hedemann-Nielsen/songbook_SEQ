@@ -1,27 +1,35 @@
-import db from "../config/db.config.js";
+import database from "../config/seq.config.js";
+import { Model, DataTypes } from "sequelize";
 
-class SongModel {
-	constructor() {}
+class Song extends Model {}
 
-	// list = (req, res) => {
-	// 	return new Promise((resolve, reject) => {
-	// 		const orberBy = req.query.orderBy || "s.id";
-	// 		const dir = req.query.dir || "ASC";
-	// 		const limit = req.query.limit ? `LIMIT ${req.query.limit}` : "";
-	// 		const sql = `   SELECT s.id, s.title, a.name AS artist
-	//                         FROM song s
-	//                         JOIN artist a
-	//                         ON s.artist_id = a.id
-	//                         ORDER BY ${orberBy} ${dir} ${limit}`;
-	// 		db.query(sql, (err, result) => {
-	// 			if (err) {
-	// 				reject(err);
-	// 			} else {
-	// 				resolve(result);
-	// 			}
-	// 		});
-	// 	});
-	// };
-}
+Song.init(
+	{
+		// Objekt med felter
+		id: {
+			type: DataTypes.INTEGER,
+			autoIncrement: true,
+			allowNull: false,
+			primaryKey: true,
+		},
+		title: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		context: {
+			type: DataTypes.TEXT,
+			allowNull: false,
+		},
+		is_active: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false,
+		},
+	},
+	{
+		database,
+		modelName: "song",
+		// Indstillinger
+	}
+);
 
-export default SongModel;
+export default Song;
